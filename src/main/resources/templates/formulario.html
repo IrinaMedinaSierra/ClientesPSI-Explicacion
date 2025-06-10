@@ -7,14 +7,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 </head>
 <body>
-<h1 class="text-center" th:text="${cliente.getIdCliente()==0?'Nuevo Cliente':'Editar Cliente'}"></h1>
+<h1 class="text-center" th:text="${cliente.getId()==0?'Nuevo Cliente':'Editar Cliente'}"></h1>
 <h1>Datos Personales</h1>
 <form class="row g-3 needs-validation" novalidate th:action="@{/crud}" method="POST"  th:object="${cliente}">
 <!--    De modo oculto, tomamos el id que se envia por el metodo GET-->
-    <input type="hidden" th:field="*{idCliente}">
+    <input type="hidden" th:field="*{id}">
     <div class="col-md-4">
         <label for="validationCustom01" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="validationCustom01" required  th:field="*{nombreC}" >
+        <input type="text" class="form-control" id="validationCustom01" required  th:field="*{nombre}" >
         <div class="valid-feedback">
            ok!
         </div>
@@ -24,7 +24,7 @@
     </div>
     <div class="col-md-4">
         <label for="validationCustom02" class="form-label">Apellido</label>
-        <input type="text" class="form-control" id="validationCustom02"  required th:field="*{apellidoC}">
+        <input type="text" class="form-control" id="validationCustom02"  required th:field="*{apellido}">
         <div class="valid-feedback">
             ok!
         </div>
